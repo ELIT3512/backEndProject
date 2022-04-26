@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    {{{body}}}
-  </body>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Avatar Me</title>
+		<link href="/stylesheets/site.css" type="text/css" rel="stylesheet" />
+		<link
+			rel="shortcut icon"
+			type="image/x-icon"
+			href="/images/AvtrLogo.jpg"
+		/>
+	</head>
+
+	<body>
+		<div class="container">
+			<header>
+				<ul>
+					<li><img class="logo" src="/images/AvtrLogo.jpg" /></li>
+					<li><a href="/">Home</a></li>
+					<li><a href="/friendList">friends List</a></li>
+					<li><a href="/Profile">Profile</a></li>
+					<li><a href="/createAvtr">Create Avatar</a></li>
+					<li><a href="/logout">Logout</a></li>
+					<li><a href="/login">Login</a></li>
+					<li><a href="/registerUser">Register</a></li>
+				</ul>
+			</header>
+			{{{body}}}
+		</div>
+		<footer>@Avatar: Exercise for Express.js and Handlebars</footer>
+	</body>
+
 </html>

@@ -13,7 +13,7 @@ const mongoose = require("mongoose")
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home');
+  res.render('createAvatar');
 });
 
 module.exports = router;

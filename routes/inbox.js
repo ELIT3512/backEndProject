@@ -10,10 +10,14 @@ const mongoose = require("mongoose")
 // const secret = String(process.env.SECRET);
 
 
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home');
+  console.log("body==",req.body)
+  res.render('inbox');
 });
+
+router.post("/",function(req,res,next){
+res.redirect("/inbox")
+})
 
 module.exports = router;
