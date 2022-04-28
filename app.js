@@ -6,9 +6,9 @@ const logger = require('morgan');
 const mongoose = require("mongoose")
 const hbs = require('hbs');
 const session = require('express-session')
-// const bcrypt = require('bcrypt');
-// const saltRounds = process.env.SALT;
-// const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt');
+const saltRounds = process.env.SALT;
+const jwt = require('jsonwebtoken')
 const secret = String(process.env.SECRET);
 
 
@@ -31,7 +31,8 @@ mongoose.connect(process.env.DB_URI,{
   user: process.env.DB_USER,
   pass: process.env.DB_PASS,
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+ 
 
 }).then(res => console.log("db connected"))
 .catch(err => console.log(err))
@@ -50,9 +51,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/registerUser', usersRouter);
 app.use('/profile', profileRoute);
-app.use('/createAvtr', createAvtrRoute);
+app.use('/createAvatar', createAvtrRoute);
 app.use('/friendDetail', friendDetailRoute);
-app.use('/editAvtr', editAvtrRoute);
+app.use('/editAvatar', editAvtrRoute);
 app.use('/login', loginRoute);
 app.use('/friendList', friendLRoute);
 app.use('/inbox',inboxRoute);

@@ -8,23 +8,10 @@ const userSchema = new Schema({
     password: String,
     inbox: Array,
     aLog: Array,
-    friends: Array
+    friends: Array,
+    avatar: {}
 });
 
-userSchema.pre('validate', function(){
-    console.log("pre");
-});
 
-userSchema.post('validate', function(){
-    console.log("post");
-});
-
-userSchema.pre('validate', function(){
-    console.log("pre2");
-});
-
-userSchema.post('validat', function(){
-    console.log("post2");
-});
 const User = module.exports = mongoose.model('User', userSchema);
 module.exports = User;

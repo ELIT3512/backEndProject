@@ -3,11 +3,11 @@ var router = express.Router();
 const User = require("../modules/User");
 const Avatar = require("../modules/Avatar");
 const mongoose = require("mongoose")
-// const bcrypt = require('bcrypt');
-// const saltRounds = process.env.SALT;
-// const jwt = require('jsonwebtoken');
-// const verifyToken = require('../middleware/somemiddleware');
-// const secret = String(process.env.SECRET);
+const bcrypt = require('bcrypt');
+const saltRounds = process.env.SALT;
+const jwt = require('jsonwebtoken');
+const verifyToken = require('../middleware/verifyTok');
+const secret = String(process.env.SECRET);
 
 
 
@@ -20,16 +20,17 @@ router.post("/",async function(req,res,next){
   const {username,password} = req.body;
 
   const user = await User.findOne({name:username});
-  // const match = await bcrypt.compare(password,user.password);
+  console.log("user",user)
+  const match = await bcrypt.compare(password,user.password);
 //   console.log("match",match);
 
-  if (user) {
-		// const payload = { id: user._id, name: username };
-		// const token = jwt.sign(payload, secret);
-		// res.cookie("accessToken", token);
+  if (match) {
+		const payload = { id: user._id, name: username };
+		const token = jwt.sign(payload, secret);
+		res.cookie("accessToken", token);
 	
 		console.log("cookie Access");
-		res.redirect("/profile");
+		res.redirect("/");
 	} else {
 
   res.redirect("/login");

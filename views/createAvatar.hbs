@@ -1,16 +1,21 @@
-
-        <main>
-            <h1>Create Avatar</h1>
-            <div class="form">
-                <form action='/createAvatar' method="POST">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name">
-                    <label for="name">Description</label>
-                    <textarea id="name" name="description"></textarea>
-                    <label for="image">ImageUrl</label>
-                    <input type="text" id="image" name="imageUrl">
-                    <input type="submit" value="Create">
-                </form>
-            </div>
-        </main>
+<main>
+    <h1>Create Avatar</h1>
+        <div class="form">
+            <form action='/createAvatar' method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+                <label for="Powertype">Power type</label>
+                <select id="powerType" name="powerType">
+                    <option value="Fire">Fire</option>
+                    <option value="Water">Water</option>
+                    <option value="Earth">Earth</option>
+                    <option value="Air">Air</option>
+                </select>
+                <label for="PowerLevel">Power Level</label>
+                <button type="submit" name="powerLevel" id="powerBtn" value="Roll">Roll</button>
+                <Footer>Power: xXx 1,2,3,4,5 xXx</Footer>
+                
+            </form>
+        </div>
+</main>
   

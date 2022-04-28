@@ -1,6 +1,6 @@
 
     <main>
-      <h1>Avatar Me</h1>
+      <h1>Avatar {{aUser.name}}</h1>
       <form action="/" method="GET">
         <label>Alog</label>
         <input type="text" class="Alog" name="Alog" placeholder="Alog...">
@@ -14,7 +14,7 @@
         <img class="friend" src="{{imageUrl}}">
         <p class="name">Name: {{name}}</p>
         <span>{{aLog}}</span>
-        <a class="btn" href="/profile/{{_id}}">Details</a>
+        <a class="btn" href="/profile{{_id}}">Details</a>
       </div>
       </div>
       {{/each}}

@@ -3,11 +3,11 @@ var router = express.Router();
 const User = require("../modules/User");
 const Avatar = require("../modules/Avatar");
 const mongoose = require("mongoose")
-// const bcrypt = require('bcrypt');
-// const saltRounds = process.env.SALT;
-// const jwt = require('jsonwebtoken');
-// const verifyToken = require('../middleware/somemiddleware');
-// const secret = String(process.env.SECRET);
+const bcrypt = require('bcrypt');
+const saltRounds = process.env.SALT;
+const jwt = require('jsonwebtoken');
+const verifyToken = require('../middleware/verifyTok');
+const secret = String(process.env.SECRET);
 
 
 
@@ -26,13 +26,14 @@ router.post("/",function(req,res,next){
     // register new user
     
     // Hash passwords w/ Bcrypt
-    // const salt = bcrypt.genSaltSync(saltRounds);
-    // const hash = bcrypt.hashSync(password, salt);
-    // console.log("password hash is ", hash);
+    const salt = bcrypt.genSaltSync(saltRounds);
+    const hash = bcrypt.hashSync(password, salt);
+    console.log("password hash is ", hash);
     // create new User model
     const newUser = new User({
       name: username,
-      password: password,
+      password: hash,
+     
     });
     // save username and hashed password
     console.log(newUser);

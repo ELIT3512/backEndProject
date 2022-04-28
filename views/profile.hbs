@@ -1,21 +1,22 @@
 
     <main>
-      <h1>Avatar Username</h1>
+      <h1>Avatar {{aUser.name}}</h1>
       <div class="about">
-        <p><img src="{{aAvtr.imageUrl}}"
-          <i>"Auvatar"</i> is a place, where you can browse some of the most popular Avatar Users in the world and add
+        {{aUser.avatar.name}}
+        <p>
+          <i>"Avatar"</i> is a place, where you can browse some of the most popular Avatar Users in the world and add
           some new friends that
           you have discovered. This application was created as an exercise for the <a
             href="https://softuni.bg/trainings/2452/js-back-end-september-2019">JS Full stack course</a> at the
-          <a href="https://softuni.bg/">KingslandUniversity</a>.</p>
+          <a href="https://softuni.bg/">Kingsland University</a>.</p>
           <div> 
             Friends List
           </div>
           <div> 
-            <li><a href="/inbox">Inbox</a></li>
-            <li><a href="/createAvtr">Create Avatar</a></li>
-            <li><a href="/editAvatar">Edit Avatar</a></li>
-            <li><a href="/logout">Logout</a></li>
+            <li><a href="/inbox/{{aUser._id}}">Inbox</a></li>
+            <li><a href="/createAvatar/{{aUser._id}}">Create Avatar</a></li>
+            <li><a href="/editAvatar/{{aUser._id}}">Edit Avatar</a></li>
+            <li><a href="/logout/{{aUser._id}}">Logout</a></li>
           </div>
       </div>
    

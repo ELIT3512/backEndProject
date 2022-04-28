@@ -23,7 +23,7 @@ const avatarSchema = new Schema({
 // the msgsenders avatar attcks the recievers avatar,
 // attack damage is determined by the avatars power level * a random msg number
 // each time a msg is sent it generates the random msg number,
-// power levers [1,2,3,4,5]
+// power levels [1,2,3,4,5]
 // msg power level [1,....,50]
 // avatars health reset after every fineshed battle ||
 // 24hrs have passed sense inital msg.

@@ -3,20 +3,18 @@
 <div class="form">
   <form action='/editAvatar/{{aAvatar._id}}' method="POST">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" value="{{aAvatar.name}}">
-    <label for="name">Description</label>
-    <textarea id="name" name="description">{{aAvatar.description}}</textarea>
-    <label for="image">ImageUrl</label>
-    <input type="text" id="image" name="imageUrl" value="{{aAvatar.imageUrl}}">
-    <label for="difficulty">Difficulty</label>
-    <select id="difficulty" name="difficultyLevel">
-      <option value="1">1 - Very Easy</option>
-      <option value="2">2 - Easy</option>
-      <option value="3">3 - Medium (Standard 3x3)</option>
-      <option value="4">4 - Intermediate</option>
-      <option value="5">5 - Expert</option>
-      <option value="6">6 - Hardcore</option>
-    </select>
-    <input type="submit" value="Edit">
+                <input type="text" id="name" name="name">
+                <label for="Powertype">Power type</label>
+                <select id="powerType" name="powerType">
+                    <option value="Fire">Fire</option>
+                    <option value="Water">Water</option>
+                    <option value="Earth">Earth</option>
+                    <option value="Air">Air</option>
+                </select>
+                <label for="PowerLevel">Power Level</label>
+                <button type="submit" name="powerLevel" id="powerBtn" value="Roll">Roll</button>
+                <Footer>Power: xRandom Power #x</Footer>
+    
+    
   </form>
 </div>

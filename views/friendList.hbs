@@ -7,18 +7,18 @@
       <div class="friend">
         <p><span>Description:</span> {{aUser.description}}</p>
         <p><span>power level:</span>{{aUser.difficulty}}</p>
-        <a class="btn" href="/attachAccessory/{{aUser._id}}">Add Accessory</a>
-        <a class="btn" href="/friendDetail/{{aUser._id}}">Delete</a>
-        <a class="btn" href="/">home</a>
-        <a class="btn" href="/editCubePage/{{aUser._id}}">Edit</a>
+        <a class="btn" href="/attachAccessory/{{aUser._id}}">Message</a>
+        <a class="btn" href="/friendDetail/{{aUser._id}}">FriendProfile</a>
+      
+     
       </div>
 
           
     
             <h2>Friends</h2>
             <div class="accessories">
-                {{#if aUser.accessories.length}}
-                {{#each aUser.accessories}}
+                {{#if aUser.friend.length}}
+                {{#each aUser.friend}}
                 <div>{{name}}</div><div>{{imageUrl}}</div>
                 {{/each}}
                 {{else}}
