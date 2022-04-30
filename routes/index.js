@@ -16,8 +16,9 @@ router.get('/',verifyToken,async function(req, res, next) {
         
         let id = req.id;
     let aUser = await User.findById(id);
-    console.log("aUser",aUser)
-    res.render('home',{aUser});
+    let avaterUsrs = await User.find();
+    console.log("aUser",avaterUsrs)
+    res.render('home',{aUser,avaterUsrs});
  
  
 });

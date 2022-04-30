@@ -1,17 +1,22 @@
 
     <main>
-	<h1>{{Friend}}Friend Profile</h1>
-<div class="form">
-  <form action='/deleteAvatar/{{aAvatar._id}}' method="POST">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" value="{{aAvatar.name}}" disabled="true"/>
-    <label for="name">Description</label>
-    <input id="description" name="description" value="{{aAvatar.description}}" disabled="true"/>
-    <label for="image">ImageUrl</label>
-    <input type="text" id="image" name="imageUrl" value="{{aaAvatarCube.imageUrl}}" disabled="true"/>
-    <label for="difficulty">Difficulty</label>
-    <input type="text" id="difficulty" name="difficulty" value="{{aAvatar.difficulty}}" disabled="true"/>
-    <input type="submit" value="Delete">
-  </form>
-</div>
+	<h1>{{friend.name}} Profile</h1>
+  <form action='/friendDetail' method="POST"></form>
+      <div class="about">
+        {{friend.avatar.name}}
+        <p>
+         
+        Fiends alogs here
+        </p>
+          <div> 
+            Friends List
+          </div>
+          <div>   
+            <li><a href="/inbox/{{aUser._id}}">Inbox</a></li>
+            <li><a href="/deleteFriend/{{aUser._id}}">Delete Friend</a></li>
+            
+            <button type="submit" name="addFriend" id="addFriend" value="addFriend">add Friend</button>
+          </div>
+      </div>
+          
     </main>

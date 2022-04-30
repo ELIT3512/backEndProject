@@ -5,7 +5,9 @@ body {
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
-
+h3 {
+    text-align: center;
+}
 header ul {
     margin: 0;
 }
@@ -77,7 +79,7 @@ div.firend {
 }
 
 div.friend:hover p.name {
-    background: #607588;
+    background: #0082fc;
     color: white;
 }
 
@@ -87,7 +89,7 @@ p.name {
     font-weight: bolder;
     text-transform: uppercase;
     padding: 10px;
-    border-bottom: 1px solid #2b415433;
+    border-bottom: 1px solid #1600a8;
 }
 
 button, main a.btn {
@@ -101,12 +103,12 @@ button, main a.btn {
     margin: 12px;
     margin-left: 6%;
     border-radius: 4px;
-    background: #607588;
+    background: #1600a8;
     color: white;
 }
 
 button:hover {
-    background-color: #0B2133;
+    background-color: #2200ff;
     color: white;
     cursor: pointer;
 }

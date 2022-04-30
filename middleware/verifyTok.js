@@ -15,7 +15,7 @@ const verifyToken = async(req,res,next)=>{
         if(err){
             console.log("Access Denied")
             
-            res.redirect("/loginPage");
+            res.redirect("/login");
         }else{
             console.log("Your good to gooo");
             

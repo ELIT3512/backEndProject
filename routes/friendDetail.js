@@ -11,12 +11,22 @@ const secret = String(process.env.SECRET);
 
 
 
-/* GET home page. */
+
 router.get('/:id',verifyToken, async function(req, res, next) {
-  const id = req.id;
-  const aUser = await User.findById(id);
+  const userId = req.id;
+  const aUser = await User.findById(userId);
+  let friendId = req.params.id;
+  console.log("fid",friendId);
+  let friend = await User.findById(friendId).populate("avatar");
+
   console.log("id",aUser);
-  res.render('friendDetail',{aUser});
+  res.render('friendDetail',{aUser,friend});
+});
+
+router.post("/:id",verifyToken,async function(req,res,next){
+  const userId = req.id;
+  const aUser = await User.findById(userId);
+  res.render("friendList",{aUser})
 });
 
 module.exports = router;
