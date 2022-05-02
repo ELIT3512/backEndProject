@@ -1,17 +1,10 @@
 
     <main>
-      <h1>Friends 
-      {{aUser.name}}
+      <h1>
+      {{aUser.name}} friend list
       </h1>
-      <img class="firend" src="{{aUser.imageUrl}}">
-      <div class="friend">
-        <p><span>Description:</span> {{aUser.description}}</p>
-        <p><span>power level:</span>{{aUser.difficulty}}</p>
-        <a class="btn" href="/attachAccessory/{{aUser._id}}">Message</a>
-        <a class="btn" href="/friendDetail/{{aUser._id}}">FriendProfile</a>
-      
+   
      
-      </div>
 
           
     
@@ -19,7 +12,14 @@
             <div class="accessories">
                 {{#if aUser.friend.length}}
                 {{#each aUser.friend}}
-                <div>{{name}}</div><div>{{imageUrl}}</div>
+                 <div class="friend">
+       <div>{{name}}</div><div>{{avatar.name}}</div>
+        <a class="btn" href="/attachAccessory/{{aUser._id}}">Message</a>
+        <a class="btn" href="/friendDetail/{{aUser._id}}">FriendProfile</a>
+      
+     
+      </div>
+                
                 {{/each}}
                 {{else}}
                 <h3 class="italic">This has no friends yet...</h3>

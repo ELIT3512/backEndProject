@@ -20,7 +20,8 @@ const editAvtrRoute = require("./routes/editAvtr");
 const loginRoute = require("./routes/login");
 const friendLRoute = require("./routes/friendList");
 const profileRoute = require("./routes/profile");
-const inboxRoute = require("./routes/inbox")
+const inboxRoute = require("./routes/inbox");
+const logOutRoute = require("./routes/logOut");
 
 var app = express();
 
@@ -57,6 +58,7 @@ app.use('/editAvatar', editAvtrRoute);
 app.use('/login', loginRoute);
 app.use('/friendList', friendLRoute);
 app.use('/inbox',inboxRoute);
+app.use('/logOut',logOutRoute);
 
 app.use(session({
   secret:'Sec Session Key',

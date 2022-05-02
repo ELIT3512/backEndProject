@@ -10,13 +10,14 @@ const secret = String(process.env.SECRET);
 const verifyToken = async(req,res,next)=>{
    jwt.verify(req.cookies.accessToken,secret,(err,decoded)=>{
        
-       req.id = decoded.id;
-            console.log("decoded",decoded.id);
+     
         if(err){
             console.log("Access Denied")
             
             res.redirect("/login");
         }else{
+            req.id = decoded.id;
+            console.log("decoded",decoded.id);
             console.log("Your good to gooo");
             
             next();

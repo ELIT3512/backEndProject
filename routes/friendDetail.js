@@ -25,8 +25,12 @@ router.get('/:id',verifyToken, async function(req, res, next) {
 
 router.post("/:id",verifyToken,async function(req,res,next){
   const userId = req.id;
-  const aUser = await User.findById(userId);
-  res.render("friendList",{aUser})
+  let aUser = await User.findById(userId);
+  let friendId = req.params.id;
+    let friend = await User.findById(friendId).populate("avatar");
+  console.log("friend",friend);
+  aUser = await User.findByIdAndUpdate(userId,{friend: friend}).populate("avatar");
+  res.render("profile",{aUser})
 });
 
 module.exports = router;

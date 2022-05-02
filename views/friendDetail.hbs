@@ -1,7 +1,8 @@
 
     <main>
 	<h1>{{friend.name}} Profile</h1>
-  <form action='/friendDetail' method="POST"></form>
+  <div class="form">
+    <form action='/friendDetail/{{friend._id}}' method="POST">
       <div class="about">
         {{friend.avatar.name}}
         <p>
@@ -18,5 +19,6 @@
             <button type="submit" name="addFriend" id="addFriend" value="addFriend">add Friend</button>
           </div>
       </div>
-          
+    </form>
+  </div>      
     </main>
