@@ -1,10 +1,19 @@
 
     <main>
+      {{aUser.name}}
       <h1>inbox</h1>
       <div class="form">
-        <form action='/' method="POST">
-          
-          <label for="chat">chat</label>
+        <form action='{{friend._id}}' method="POST">
+          <select name="chats" id="chats">
+            {{#each aUserInbox}}
+            <option value="{{user2}}">{{user2}}</option>
+            {{/each}}
+          </select>
+          <label for="chat">chat: {{friend.name}}</label>
+          <div>{{#each aUserChat}}
+            <p>{{this}}</p> 
+            {{/each}}
+          </div>
           <textarea id="chat" name="chat"></textarea>
           
           

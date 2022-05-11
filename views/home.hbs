@@ -2,21 +2,20 @@
     <main>
       <h1>Avatar {{aUser.name}}</h1>
       <form action="/" method="GET">
-        <label>Alog</label>
-        <input type="text" class="Alog" name="Alog" placeholder="Alog...">
+       
         
-        <input type="submit" value="post">
+        {{!-- <input type="submit" value="post"> --}}
       </form>
-      <div>
+      
         <h3>Avatar List</h3>
-      {{#each avaterUsrs}}
+      {{#each avtrU}}
       <div class="friend">
         
         <p class="name">Name: {{name}}</p>
         <span>{{avatar.name}}</span>
         <a class="btn" href="/friendDetail/{{_id}}">{{name}} Profile</a>
       </div>
-      </div>
+      
       {{/each}}
    
 

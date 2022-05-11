@@ -15,8 +15,17 @@ const secret = String(process.env.SECRET);
 router.get('/:id',verifyToken, async function(req, res, next) {
   const id = req.id;
   const aUser = await User.findById(id);
-  console.log("id",aUser);
-  res.render('friendList',{aUser});
+  
+  let friendArr = await aUser.populate("friends");
+  let friendList = friendArr.friends;
+  // let arr = [];
+  // await friendArr.forEach(element => {
+  //  let fr = User.findById(element._id);
+  //  arr.push(fr);
+  // });
+  // console.log("arr",arr);
+  console.log("friendArr",friendArr.friends);
+  res.render('friendList',{aUser,friendList});
 });
 
 module.exports = router;

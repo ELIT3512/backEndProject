@@ -12,6 +12,7 @@ const jwt = require('jsonwebtoken')
 const secret = String(process.env.SECRET);
 
 
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/registerUsers');
 const createAvtrRoute = require('./routes/createAvtr');
@@ -81,5 +82,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

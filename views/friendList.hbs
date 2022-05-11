@@ -10,12 +10,12 @@
     
             <h2>Friends</h2>
             <div class="accessories">
-                {{#if aUser.friend.length}}
-                {{#each aUser.friend}}
+                {{#if friendList.length}}
+                {{#each friendList}}
                  <div class="friend">
        <div>{{name}}</div><div>{{avatar.name}}</div>
-        <a class="btn" href="/attachAccessory/{{aUser._id}}">Message</a>
-        <a class="btn" href="/friendDetail/{{aUser._id}}">FriendProfile</a>
+        <a class="btn" href="/inbox/{{_id}}">Message</a>
+        <a class="btn" href="/friendDetail/{{_id}}">Friend Profile</a>
       
      
       </div>
