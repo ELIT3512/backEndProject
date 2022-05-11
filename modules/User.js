@@ -6,9 +6,8 @@ const userSchema = new Schema({
     id:Number,
     name: String,
     password: String,
-    inbox: Array,
-    aLog: Array,
-    friends: Array,
+    inbox: [{type: Schema.Types.ObjectId,ref:"ChatBox"}],
+    friends: [{type: Schema.Types.ObjectId,ref:"User"}],
     avatar: {}
 });
 

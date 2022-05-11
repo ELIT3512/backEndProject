@@ -8,6 +8,7 @@ const saltRounds = process.env.SALT;
 const jwt = require('jsonwebtoken');
 const verifyToken = require('../middleware/verifyTok');
 const secret = String(process.env.SECRET);
+const alert = require("alert");
 
 
 
@@ -20,6 +21,9 @@ router.get('/:id',verifyToken, async function(req, res, next) {
 });
 
 router.post("/",verifyToken, async function(req,res,next){
+  const regex = /=*[A-Za-z0-9]/
+
+  let match = false;
   
   const id = req.id;
   let aUser = await User.findById(id);
@@ -28,16 +32,12 @@ router.post("/",verifyToken, async function(req,res,next){
   const {name,powerType} = req.body;
   const powerLevels = [1,2,3,4,5];
   let randomPwLv = powerLevels[Math.floor(Math.random() * powerLevels.length)];
-  // console.log(req.body);
-  
-    // register new user
+  match = regex.test(name);
+  if(match != true){
+    alert("invalid name");
+    return res.render("createAvatar");
     
-    
-    // Hash passwords w/ Bcrypt
-    // const salt = bcrypt.genSaltSync(saltRounds);
-    // const hash = bcrypt.hashSync(password, salt);
-    // console.log("password hash is ", hash);
-    // create new User model
+  }else{
     const aAvtr = new Avatar({
       name: name,
       powerType: powerType,
@@ -51,6 +51,9 @@ router.post("/",verifyToken, async function(req,res,next){
     // save username and hashed password
     // console.log(aAvtr);
     aAvtr.save();
+  }
+ 
+    
   
   
   res.render("profile",{aUser});

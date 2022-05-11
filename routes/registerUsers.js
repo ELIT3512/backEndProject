@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 const verifyToken = require('../middleware/verifyTok');
 const secret = String(process.env.SECRET);
 
-
+const alert = require("alert");
 
 
 /* GET users listing. */
@@ -19,6 +19,13 @@ router.get('/', function(req, res, next) {
 
 router.post("/",function(req,res,next){
   const {username,password,repeatPassword} = req.body;
+  const regex = /=*[A-Za-z0-9]/
+  let match = false;
+  match = regex.test(username);
+  if(match != true){
+    alert("invalid name");
+    res.render('registerUser');
+  }
   // console.log(req.body);
   if(password != repeatPassword){
     res.send("passwords don't match");
